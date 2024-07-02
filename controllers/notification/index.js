@@ -42,13 +42,13 @@ exports.getNotificationByUserId = async (req, res, next) => {
         }
 
         const data = await NotificationUseCase.getNotificationsByUserId(userId);
+        // Check if data is empty or not found
         if (!data || data.length === 0) {
-            throw {
-                statusCode: 404,
-                message: `Notifications for userId are not found!`,
-            };
+            return res.status(200).json({
+                message: `Notifications for userId ${userId} are not found`,
+                data: [],
+            });
         }
-
         res.status(200).json({
             message: "Success",
             data,
