@@ -73,6 +73,7 @@ exports.createBooking = async (req, res, next) => {
         req.io.emit("bookingNotification", {
             message: `Data booking anda telah tersimpan dengan kode booking`,
             highlight: data.bookingCode,
+            userId: payload.userId,
         });
 
         req.io.emit("notificationUpdate", {
