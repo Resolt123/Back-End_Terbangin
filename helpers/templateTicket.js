@@ -1,6 +1,6 @@
 exports.emailTemplate = (data) => {
-  if (!data.flightReturnAirportCode) {
-    return `<!DOCTYPE html>
+    if (!data.flightReturnAirportCode) {
+        return `<!DOCTYPE html>
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
 
 <head>
@@ -755,8 +755,8 @@ exports.emailTemplate = (data) => {
 </body>
 
 </html>`;
-  } else {
-    return `<!DOCTYPE html>
+    } else {
+        return `<!DOCTYPE html>
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
 
 <head>
@@ -1230,7 +1230,7 @@ exports.emailTemplate = (data) => {
 														<tr>
 															<td class="pad">
 																<div style="color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:17px;line-height:120%;text-align:center;mso-line-height-alt:20.4px;">
-																	<p style="margin: 0; word-break: break-word;"><span>${data.flightReturnCity}</span></p>
+																	<p style="margin: 0; word-break: break-word;"><span>${data.flightReturnCity2}</span></p>
 																</div>
 															</td>
 														</tr>
@@ -1282,7 +1282,7 @@ exports.emailTemplate = (data) => {
 														<tr>
 															<td class="pad">
 																<div style="color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:17px;line-height:120%;text-align:center;mso-line-height-alt:20.4px;">
-																	<p style="margin: 0; word-break: break-word;"><span>${data.flightReturnCity2}</span></p>
+																	<p style="margin: 0; word-break: break-word;"><span>${data.flightReturnCity}</span></p>
 																</div>
 															</td>
 														</tr>
@@ -1752,5 +1752,5 @@ exports.emailTemplate = (data) => {
 </body>
 
 </html>`;
-  }
+    }
 };

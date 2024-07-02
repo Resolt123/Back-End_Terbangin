@@ -53,8 +53,8 @@ exports.generateFlightTicket = async (email, bookingId) => {
     let flightDeparturePlain;
     let flightReturnPlain;
 
-    if (booking[0].roundtripFlightId) {
-        flightIdDeparture = helperBooking[1].Seat.flightId;
+    if (booking[0]?.roundtripFlightId) {
+        flightIdDeparture = helperBooking[0].Seat.flightId;
         flightIdReturn = booking[0].roundtripFlightId;
         flightDeparture = await getFlightbyId(flightIdDeparture);
         flightReturn = await getFlightbyId(flightIdReturn);

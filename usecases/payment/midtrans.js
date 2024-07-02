@@ -154,6 +154,10 @@ exports.handleMidtransNotification = async (notification, req) => {
                     req.io.emit("seatsUpdate", {
                         message: "Seats Update",
                     });
+
+                    req.io.emit("paymentUpdate", {
+                        message: "Payment Update",
+                    });
                 }
 
                 return updatePaymentById(orderId, {
@@ -228,6 +232,10 @@ exports.handleMidtransNotification = async (notification, req) => {
                 req.io.emit("seatsUpdate", {
                     message: "Seats Update",
                 });
+
+                req.io.emit("paymentUpdate", {
+                    message: "Payment Update",
+                });
             }
 
             return updatePaymentById(orderId, {
@@ -258,6 +266,10 @@ exports.handleMidtransNotification = async (notification, req) => {
                 message: `Pembayaran anda telah expired`,
                 highlight: `Order ID ${orderId}`,
                 userId: transaction.userId,
+            });
+
+            req.io.emit("paymentUpdate", {
+                message: "Payment Update",
             });
 
             return updatedPayment;
